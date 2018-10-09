@@ -2,3 +2,11 @@ body {
   min-height: 2000px;
   padding-top: 70px;
 }
+
+#errors {
+  width: 100%;
+}
+
+#errors .alert {
+  width: 100%;
+}
