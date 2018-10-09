@@ -32,6 +32,7 @@
           if (data) {
             self.user = new exports.User(data);
             self.user.render();
+            self.render();
           }
           return self;
         })
@@ -40,12 +41,24 @@
         });
     },
 
+    render () {
+      const nav = global.jQuery('#navbar');
+      if (this.user) {
+        nav.find('.login').hide();
+        nav.find('.signup').hide();
+      } else {
+        nav.find('.logout').hide();
+      }
+    },
+
     editUser() {
       return this.user.update({
           name: {
-            givenName: 'Ling',
-            familyName: 'Llama',
-          }
+            givenName: 'Gina',
+            familyName: 'C',
+          },
+          email: 'cesine.ca@gmail.com',
+          description: '["javascript","data","android"]'
         })
         .catch((err) => {
           this.renderError(err);
