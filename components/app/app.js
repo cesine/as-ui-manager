@@ -29,6 +29,10 @@
             throw data;
           }
 
+          for (var pair of xhr.headers.entries()) {
+            console.log('Response header: ', pair[0] + ': ' + pair[1]);
+          }
+
           if (data) {
             self.user = new exports.User(data);
             self.user.render();
@@ -37,11 +41,12 @@
           return self;
         })
         .catch((err) => {
+          self.render();
           self.renderError(err);
         });
     },
 
-    render () {
+    render() {
       const nav = global.jQuery('#navbar');
       if (this.user) {
         nav.find('.login').hide();
