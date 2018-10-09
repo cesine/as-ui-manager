@@ -54,16 +54,26 @@
       } else {
         nav.find('.logout').hide();
       }
+      global.jQuery('#profile .edit').click((e) => {
+        e.preventDefault();
+        this.editUser();
+      });
     },
 
     editUser() {
+      try {
+        const verified = AsToken.verify(this.user.token);
+        console.log('Validated user has not been mutated', verified);
+      } catch (err) {
+        return Promise.reject(err);
+      }
+
+      const name = prompt('New name?', 'Bob');
       return this.user.update({
           name: {
-            givenName: 'Gina',
-            familyName: 'C',
+            givenName: name,
+            familyName: '',
           },
-          email: 'cesine.ca@gmail.com',
-          description: '["javascript","data","android"]'
         })
         .catch((err) => {
           this.renderError(err);
