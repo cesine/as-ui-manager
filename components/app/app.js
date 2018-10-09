@@ -40,6 +40,18 @@
         });
     },
 
+    editUser() {
+      return this.user.update({
+          name: {
+            givenName: 'Ling',
+            familyName: 'Llama',
+          }
+        })
+        .catch((err) => {
+          this.renderError(err);
+        });
+    },
+
     renderError(err) {
       global.jQuery('#errors').html(`<div class="alert alert-${err.status <= 400 ? 'warning': 'danger'} alert-dismissible" role="alert">
   <strong>${err.statusText || 'Error'}:</strong> ${err.message}
