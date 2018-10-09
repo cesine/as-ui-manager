@@ -12,6 +12,11 @@
       height: 10em;
     }
   </style>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="components/app/app.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/as-sdk-javascript/anything/anything.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/as-sdk-javascript/user/user.css">
 </head>
 <body>
   <script type="text/javascript" src="bower_components/jasmine-core/lib/jasmine-core/jasmine.js"></script>
@@ -24,6 +29,30 @@
     window.exports = {};
     window.global = window;
   </script>
+
+  <div id="profile" class="well profile">
+    <img class="pull-right" src="https://secure.gravatar.com/avatar/54b53868cb4d555b804125f1a3969e87.jpg?s=100&d=identicon&r=pg"/>
+    <h1 class="displayName"> <small class="username">()</small></h1>
+    <dl>
+      <dt>
+        <i class="glyphicon glyphicon-envelope"></i>
+        Email:
+      </dt>
+      <dd class="email">
+        anony@mou.se
+      </dd>
+      <dt>
+        <i class="glyphicon glyphicon-comment"></i>
+        Description:
+      </dt>
+      <dd class="description">
+        Lorem ipsum
+      </dd>
+    </dl>
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <script type="text/javascript" src="bower_components/as-sdk-javascript/user/user.js"></script>
   <script type="text/javascript" src="bower_components/as-sdk-javascript/user/user-spec.js"></script>
