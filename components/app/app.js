@@ -11,7 +11,7 @@
 
       return global.fetch(this.url, {
           method: 'GET',
-          // mode: 'cors',
+          mode: 'cors',
           credentials: 'include',
           headers: {
             Accept: 'application/json; charset=utf-8',
